@@ -32,7 +32,16 @@ begin
 	end;
 end;
 
+procedure Split(Delimiter: Char; Str: string; ListOfStrings: TStrings) ;
+begin
+  ListOfStrings.Clear;
+  ListOfStrings.Delimiter       := Delimiter;
+  ListOfStrings.StrictDelimiter := True; // Requires D2006 or newer.
+  ListOfStrings.DelimitedText   := Str;
+end;
+
 var j,p: Integer;
+
 // ---------------------------------------------------------------------------
 // program entry function
 // ---------------------------------------------------------------------------
@@ -61,7 +70,6 @@ begin
 			begin
 				while (true) do
 				begin
-				writeln(j);
 					if p > 0 then
 					break;
 					
@@ -77,7 +85,7 @@ begin
 			end;
 		end;
 		
-		exit;
+		//exit;
 		SetLength(output, wordSplitArray.Count);
 		activationFunction( output );
 		

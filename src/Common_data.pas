@@ -28,18 +28,18 @@ type
 		astr: string;
 	end;
 	TInputRecord = record
-		afun: real;
-		astr: array of string;
-		ares: PAntwortRecord;
-		aptr: Pointer;
+		afun: real;             // activation function
+		astr: array of string;  // activation string
+		ares: PAntwortRecord;   // activation result
+		aptr: Pointer;          // activation action function
 	end;
 
 // ---------------------------------------------------------------------------
 // common used variables:
 // ---------------------------------------------------------------------------
 var
-	wordSplitArray: TStringList;		// splitted prompt sentence
-	output        : array of real;  	// activation output
+	wordSplitArray: TStringList;        // splitted prompt sentence
+	output        : array of real;      // activation output
 	wordPrompt    : string;             // user input (prompt text)
 	tmpstr        : string;
 	
